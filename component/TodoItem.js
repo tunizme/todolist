@@ -5,6 +5,9 @@ import { connect } from "../store.js";
 function TodoItem({ todo, index }) {
   return html`
     <li class="to-do-item">
+      <div
+      onclick="document.querySelector('.index-${todo.id}').focus()"
+      class="input-inf">
       <input value="${todo.title}" type="checkbox" id="input-${index}"
       class="check-input" onchange="dispatch('toggle', ${todo.id})" 
       ${todo.completed && "checked"} />
@@ -14,14 +17,20 @@ function TodoItem({ todo, index }) {
         </svg>
       </label>
       <input
-        value="${todo.title}"
-        class="index-${todo.id} description editing ${todo.completed &&
+      onfocus="this.selectionStart = this.selectionEnd = this.value.length;"
+      value="${todo.title}"
+      class="
+      index-${todo.id} description editing ${todo.completed &&
         "completed"}"
         onkeyup="event.keyCode === 13 && dispatch('editTask', this.value.trim(), ${todo.id})
-      || event.keyCode === 27 && dispatch('cancelEdit')
-      "
+        || event.keyCode === 27 && dispatch('cancelEdit')
+        "
         onblur="dispatch('editTask', this.value.trim(), ${todo.id})"
-      />
+        />
+        <p class="title" >
+            ${todo.title}
+        </p>
+      </div>
       <div class="icon">
         <div class="edit-delete">
           <span
@@ -38,7 +47,7 @@ function TodoItem({ todo, index }) {
           </span>
         </div>
         <div class="time">
-          <span class="material-symbols-outlined"> error </span>
+          <span class="error material-symbols-outlined"> error </span>
           <p>${todo.time}</p>
         </div>
       </div>

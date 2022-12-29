@@ -49,3 +49,69 @@ body {
 body ::-webkit-scrollbar {
 	display: none;
 }
+
+@media only screen and (max-width: 768px) {
+	.main {
+		height: 100%;
+	}
+
+	.container {
+		height: 100%;
+		padding: 40px 12px;
+		border-radius: 0px;
+	}
+
+	.container-input {
+		height: 40px;
+	}
+
+	.form-input {
+		font-size: 1rem;
+	}
+
+	.btn {
+		font-size: 0.8rem;
+	} 
+
+	.status span {
+		font-weight: 600;
+		font-size: 0.8rem;
+	}
+
+	.status {
+		font-weight: 300;
+	}
+
+	.container-to-do {
+		overflow-y: hidden;
+		height: 100%;
+	}
+
+	.input-inf {
+		width: 80%;
+	}
+
+	.checkbox {
+		height:20px;
+		width: 22px;
+	}
+
+
+
+	.description, .title{
+		font-size: 0.9rem;
+	}
+
+	.icon {
+		font-size: .6rem;
+	}
+
+	.edit-delete .edit {
+		display: none;
+	}
+
+	.time .error {
+		font-size: .8rem;
+	}
+
+}
