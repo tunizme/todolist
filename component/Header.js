@@ -22,7 +22,7 @@ function Header() {
         onclick="dispatch('add', 
         document.querySelector('.form-input').value.trim(),
         document.querySelector('.time-input').value.trim(),
-        )"
+        ) || document.querySelector('.form-input').focus()"
         class="disabled btn"
       >
         Add

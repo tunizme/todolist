@@ -88,7 +88,7 @@ body ::-webkit-scrollbar {
 	}
 
 	.input-inf {
-		width: 80%;
+		width: 75%;
 	}
 
 	.checkbox {
@@ -112,6 +112,10 @@ body ::-webkit-scrollbar {
 
 	.time .error {
 		font-size: .8rem;
+	}
+
+	.time span:first-child {
+		margin-right: 2px;
 	}
 
 }
